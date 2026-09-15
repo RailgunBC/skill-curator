@@ -1,6 +1,6 @@
 # skill-curator
 
-当前 `skill-curator` 版本为 **1.01**。它可以理解成一个“GitHub 项目审核、选型、适配与安装管家”。
+当前 `skill-curator` 版本为 **1.01**。它可以理解成一个“GitHub 项目审核、选型、适配与安装管家”。目前在发送github链接后会自动触发
 
 ## 核心作用
 
@@ -50,7 +50,7 @@
 直接发送 GitHub 仓库主页链接：
 
 ```
-https://github.com/owner/repository
+如：https://github.com/owner/repository
 ```
 
 此时默认只审核，不安装。
