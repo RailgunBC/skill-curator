@@ -1,0 +1,35 @@
+# skill-curator personal configuration template
+# Copy to config.yaml on first use. Do not commit or distribute config.yaml.
+schema_version: 1
+configured: 0
+
+documentation:
+  # Set during first-use configuration.
+  enabled: null
+  directory: null
+
+  template:
+    # One of: directory_samples, explicit_file, ai_generated, collaborative
+    mode: null
+    # Required for explicit_file, ai_generated, and collaborative.
+    file: null
+    # Used only by directory_samples.
+    sample_limit: 5
+    recursive: false
+
+  retry:
+    # One of: ask, auto_safe, never
+    policy: ask
+    max_auto_retries: 1
+
+project_scan:
+  # One of: light, medium
+  level: null
+  # Used only by medium scanning.
+  recent_task_limit: 10
+  turn_limit_per_task: 10
+
+paths:
+  # Null means auto-detect; ask only when detection is ambiguous or fails.
+  global_skills_directory: null
+  local_project_roots: []
