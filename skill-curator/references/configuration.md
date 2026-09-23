@@ -5,7 +5,7 @@ Read this file only when `config.yaml` is missing, `configured` is not `1`, the 
 ## Bootstrap
 
 1. If `config.yaml` is missing, copy the structure from `config.example.yaml` without changing the example file.
-2. Validate `schema_version`. Version `1` is supported by Skill version 1.2.
+2. Validate `schema_version`. Version `1` is supported by Skill version 1.2.1.
 3. Preserve valid existing values during repair or schema migration.
 4. Never store credentials, tokens, passwords, private repository content, or transient discovery results.
 
@@ -72,7 +72,8 @@ Show a concise summary of all selected values. After user confirmation:
 1. Write the completed configuration to `config.yaml`.
 2. Validate conditional requirements and referenced paths.
 3. Set `configured: 1` only after all required template files and directories are valid.
-4. Resume the task that triggered first-use configuration.
+
+After configuration or repair, return to the original user request and rerun intent routing. Do not treat configuration completion as completion of that request.
 
 ## Conditional validation
 

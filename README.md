@@ -1,6 +1,6 @@
 # skill-curator
 
-当前版本：**1.2**
+当前版本：**1.2.1**
 
 `skill-curator` 是面向 Codex 的 GitHub 项目审核、形态判断、适配与授权安装 Skill。它会根据用户意图选择审核、定向查看或直接安装流程，不再把所有请求都强制转换成完整审核。
 
@@ -56,6 +56,10 @@ $skill-curator 判断这个本地项目适合做 Skill、MCP、CLI 还是脚本
 
 个人配置不会纳入版本控制。升级时保留现有 `config.yaml`，使用 `config.example.yaml` 作为字段参考。
 
+## V1.2.1 结构调整
+
+`SKILL.md` 只保留配置闸门、意图路由、共享证据规则和行为边界；审核、安装与安装后文档规则分别放入按需读取的 reference。配置完成或修复后会继续处理原始请求。V1.2 的触发与执行行为保持不变，`config.example.yaml` 的配置结构也不变。
+
 ## V1.2 主要变化
 
 - 按“仅链接、明确任务、明确安装”分流，避免不必要的完整审核。
@@ -73,12 +77,18 @@ skill-curator/
 ├── SKILL.md
 ├── config.example.yaml
 └── references/
-    └── configuration.md
+    ├── configuration.md
+    ├── audit.md
+    ├── installation.md
+    └── documentation.md
 ```
 
-- `SKILL.md`：触发规则、意图路由、审核、安装与安装后文档流程。
+- `SKILL.md`：触发规则、配置闸门、意图路由与共享边界。
 - `config.example.yaml`：可分发的配置样例，不保存用户的实际路径。
 - `references/configuration.md`：首次配置、配置校验、局部修复和重配置规则。
+- `references/audit.md`：仅链接或明确审核请求的审核流程与输出格式。
+- `references/installation.md`：明确安装请求的预检、适配、验证与回滚。
+- `references/documentation.md`：安装成功后的模板选择、Obsidian 文档和重试规则。
 
 ## 行为边界
 
